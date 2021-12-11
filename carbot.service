@@ -1,20 +1,19 @@
-# pibot-mqttclient.service
+# carbot.service
 #
-# create this file as:
-# sudo nano /lib/systemd/system/pibot-mqttclient.service
+# found in /lib/systemd/system/carbot.service
 
 # after saving, enable with the command:
-# sudo systemctl enable pibot-mqttclient.service
+# sudo systemctl enable carbot.service
 
 # You can test if a service is running with:
-# sudo systemctl is-active pibot-mqttclient.service
+# sudo systemctl is-active carbot.service
 [Unit]
-Description=Pibot MQTT Script Service
+Description=carbot mqtt Script Service
 After=mosquitto.service
 
 [Service]
 Type=idle
-ExecStart=/usr/bin/python3 /home/pi/GrowBuddy/Doctor/car/controlCar.py
+ExecStart=/usr/bin/python3 /home/pi/GrowBuddy/Doctor/carbot/carbot.py
 Restart=always
 [Install]
 WantedBy=multi-user.target
